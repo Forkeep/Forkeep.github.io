@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>你好，李哲</title>
+    <link>http://example.org/</link>
+    <description>Recent content on 你好，李哲</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sun, 23 Feb 2020 19:11:59 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Hugo和Github搭建个人博客</title>
+      <link>http://example.org/posts/my-first-post/</link>
+      <pubDate>Sun, 23 Feb 2020 19:11:59 +0800</pubDate>
+      
+      <guid>http://example.org/posts/my-first-post/</guid>
+      <description>使用Hugo和Github搭建个人博客 此处在掘金社区</description>
+    </item>
+    
+    <item>
+      <title>HTML入门笔记</title>
+      <link>http://example.org/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 21 Feb 2020 19:11:59 +0800</pubDate>
+      
+      <guid>http://example.org/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>HTML入门笔记 此处在掘金社区</description>
+    </item>
+    
+  </channel>
+</rss>

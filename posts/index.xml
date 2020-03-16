@@ -6,10 +6,34 @@
     <description>Recent content in Posts on 你好，李哲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 16 Mar 2020 10:28:31 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 10:42:55 +0800</lastBuildDate>
     
 	<atom:link href="https://forkeep.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>算法 Remove Duplicates from Sorted Array</title>
+      <link>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-remove/</link>
+      <pubDate>Mon, 16 Mar 2020 10:42:55 +0800</pubDate>
+      
+      <guid>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-remove/</guid>
+      <description>算法-Remove Duplicates from Sorted Array Remove Duplicates from Sorted Array
+Example 1:
+Given nums = [1,1,2], Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn&#39;t matter what you leave beyond the returned length. Example 2:
+Given nums = [0,0,1,1,1,2,2,3,3,4], Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.</description>
+    </item>
+    
+    <item>
+      <title>算法-Best Time to Buy and Sell Stock II</title>
+      <link>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-2%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 16 Mar 2020 10:29:59 +0800</pubDate>
+      
+      <guid>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-2%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/</guid>
+      <description>算法-Best Time to Buy and Sell Stock II Best Time to Buy and Sell Stock II
+Example 1:
+Input: [7,1,5,3,6,4] Output: 7 Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3. Example 2:
+Input: [1,2,3,4,5] Output: 4 Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.</description>
+    </item>
     
     <item>
       <title>算法-股票问题</title>

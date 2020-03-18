@@ -6,10 +6,21 @@
     <description>Recent content in Posts on 你好，李哲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 16 Mar 2020 10:42:55 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2020 16:25:47 +0800</lastBuildDate>
     
 	<atom:link href="https://forkeep.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>算法-Valid Sudoku</title>
+      <link>https://forkeep.github.io/posts/sudoki-valid/</link>
+      <pubDate>Wed, 18 Mar 2020 16:25:47 +0800</pubDate>
+      
+      <guid>https://forkeep.github.io/posts/sudoki-valid/</guid>
+      <description>算法-数独正确性检验（ Valid Sudoku） 原题目： etermine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
+ Each row must contain the digits 1-9 without repetition. Each column must contain the digits 1-9 without repetition. Each of the 9 3x3 sub-boxes of the grid must contain the digits 1-9 without repetition.  A partially filled sudoku which is valid.
+The Sudoku board could be partially filled, where empty cells are filled with the character &#39;.</description>
+    </item>
     
     <item>
       <title>算法 Remove Duplicates from Sorted Array</title>

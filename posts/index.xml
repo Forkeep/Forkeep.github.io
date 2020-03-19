@@ -6,10 +6,39 @@
     <description>Recent content in Posts on 你好，李哲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 18 Mar 2020 16:25:47 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 16:59:41 +0800</lastBuildDate>
     
 	<atom:link href="https://forkeep.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>算法-第一个不重复字符</title>
+      <link>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6/</link>
+      <pubDate>Thu, 19 Mar 2020 16:59:41 +0800</pubDate>
+      
+      <guid>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6/</guid>
+      <description>Given a string, find the first non-repeating character in it and return it&amp;rsquo;s index. If it doesn&amp;rsquo;t exist, return -1.
+Examples:
+s = &amp;quot;leetcode&amp;quot; return 0. s = &amp;quot;loveleetcode&amp;quot;, return 2. Note: You may assume the string contain only lowercase letters.
+题意： 给一个字符串，找出第一个字母（这个字母在字符串中只出现一次）
+思路： 找出所有字母出现的此处，然后再找出第一个次数为1的这个字母返回
+步骤：   遍历字符串，将每个字母出现次数之和统计到hash表中
+  再按顺序进行遍历，对比字母出现次数是否为1
+  代码实现： /* * @lc app=leetcode.cn id=387 lang=javascript * * [387] 字符串中的第一个唯一字符 */ // @lc code=start /** * @param {string} s * @return {number} */ var firstUniqChar = function(s) { const hashMap = {} for(let i=0;i&amp;lt;s.</description>
+    </item>
+    
+    <item>
+      <title>算法-旋转图像</title>
+      <link>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/</link>
+      <pubDate>Thu, 19 Mar 2020 16:51:40 +0800</pubDate>
+      
+      <guid>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/</guid>
+      <description>You are given an n x n 2D matrix representing an image.
+Rotate the image by 90 degrees (clockwise).
+Example 1:
+Given input matrix = [ [1,2,3], [4,5,6], [7,8,9] ], rotate the input matrix in-place such that it becomes: [ [7,4,1], [8,5,2], [9,6,3] ] Example 2:
+Given input matrix = [ [ 5, 1, 9,11], [ 2, 4, 8,10], [13, 3, 6, 7], [15,14,12,16] ], rotate the input matrix in-place such that it becomes: [ [15,13, 2, 5], [14, 3, 4, 1], [12, 6, 8, 9], [16, 7,10,11] ] 题意： 旋转图片，因为图片是由矩阵数据表示的，所以可以吧一个矩阵当做是一个图片，顺时针旋转90度。</description>
+    </item>
     
     <item>
       <title>算法-Valid Sudoku</title>

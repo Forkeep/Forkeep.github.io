@@ -6,10 +6,25 @@
     <description>Recent content in Posts on 你好，李哲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 19 Mar 2020 16:59:41 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 10:15:55 +0800</lastBuildDate>
     
 	<atom:link href="https://forkeep.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>算法-回文字符串</title>
+      <link>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Fri, 20 Mar 2020 10:15:55 +0800</pubDate>
+      
+      <guid>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+Note: For the purpose of this problem, we define empty string as valid palindrome.
+Example 1:
+Input: &amp;quot;A man, a plan, a canal: Panama&amp;quot; Output: true Example 2:
+Input: &amp;quot;race a car&amp;quot; Output: false 题意： 输入一个字符串，返回一个布尔值，判断这个字符串是不是回文字符串，题目假设，&amp;lsquo;&amp;lsquo;空字符串为回文字符串。
+思路： 对输入的字符串进行判断，是否是空，不是空则把标点符号去掉，且全部小写，然后进行判断。
+步骤：  判断是否为空，空字符串返回true 正则匹配，所有不是字母的都替换为空，并且全部小写 循环判断第i个字符和第s.length-i-1 个字符是否相等  代码实现： /** * @param {string} s * @return {boolean} */ var isPalindrome = function(s) { if(s ===&amp;#39;&amp;#39;)return true s = s.</description>
+    </item>
     
     <item>
       <title>算法-第一个不重复字符</title>

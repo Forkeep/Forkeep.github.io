@@ -6,10 +6,20 @@
     <description>Recent content on 你好，李哲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 22 Mar 2020 20:17:35 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2020 10:03:40 +0800</lastBuildDate>
     
 	<atom:link href="https://forkeep.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>算法 罗马数字转整数</title>
+      <link>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/</link>
+      <pubDate>Mon, 23 Mar 2020 10:03:40 +0800</pubDate>
+      
+      <guid>https://forkeep.github.io/posts/%E7%AE%97%E6%B3%95-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/</guid>
+      <description>Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+Symbol Value I 1 V 5 X 10 L 50 C 100 D 500 M 1000 For example, two is written as II in Roman numeral, just two one&amp;rsquo;s added together. Twelve is written as, XII, which is simply X + II. The number twenty seven is written as XXVII, which is XX + V + II.</description>
+    </item>
     
     <item>
       <title>算法 判断是否是3的多次方</title>

@@ -6,10 +6,29 @@
     <description>Recent content in Posts on 你好，李哲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 23 Mar 2020 10:03:40 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2020 23:16:37 +0800</lastBuildDate>
     
 	<atom:link href="https://forkeep.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue中的.sync修饰符</title>
+      <link>https://forkeep.github.io/posts/vue%E4%B8%AD%E7%9A%84.sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/</link>
+      <pubDate>Wed, 25 Mar 2020 23:16:37 +0800</pubDate>
+      
+      <guid>https://forkeep.github.io/posts/vue%E4%B8%AD%E7%9A%84.sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/</guid>
+      <description>前情提要 Vue的一些规则  组件不能修改外部的props的数据 $emit()可以触发事件并且传参 $event 可以获得$emit的参数 上述为发布和订阅模式  场景 组件A传参给组件B，这个参数称之为money，组件B想要修改money的值，如果在组件B内直接修改这个props，则在组件A渲染时不奏效，会按照组件A之前的money值渲染，所以为了解决这个问题，我们怎么办？
+基本解法 //App.vue &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;app&amp;#34;&amp;gt; App.vue 我现在有 {{total}} &amp;lt;hr&amp;gt; &amp;lt;Child :money=&amp;#34;total&amp;#34; v-on:update:money=&amp;#34;total = $event&amp;#34;/&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import Child from &amp;#34;./Child.vue&amp;#34;; export default { data() { return { total: 10000 }; }, components: { Child: Child } }; &amp;lt;/script&amp;gt; &amp;lt;style&amp;gt; .app { border: 3px solid red; padding: 10px; } &amp;lt;/style&amp;gt; //Child.vue &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;child&amp;#34;&amp;gt; {{money}} &amp;lt;button @click=&amp;#34;$emit(&amp;#39;update:money&amp;#39;, money-100)&amp;#34;&amp;gt; &amp;lt;span&amp;gt;花钱&amp;lt;/span&amp;gt; &amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { props: [&amp;#34;money&amp;#34;] }; &amp;lt;/script&amp;gt; &amp;lt;style&amp;gt; .</description>
+    </item>
+    
+    <item>
+      <title>正则表达式全解Js</title>
+      <link>https://forkeep.github.io/posts/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A8%E8%A7%A3js/</link>
+      <pubDate>Mon, 23 Mar 2020 10:28:46 +0800</pubDate>
+      
+      <guid>https://forkeep.github.io/posts/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A8%E8%A7%A3js/</guid>
+      <description>正则表达式（JavaScript）  第一章 正则匹配全解 本章知识结构图 graph LR; 正则匹配--&amp;gt;精确匹配 --&amp;gt;jq[&amp;quot;/hello/&amp;quot;]; 正则匹配--&amp;gt;模糊匹配; 模糊匹配--&amp;gt;横向模糊匹配 --&amp;gt;mhh[&amp;quot;/abc{1,3}d/&amp;quot;]; 模糊匹配--&amp;gt;纵向模糊匹配--&amp;gt;mhz[&amp;quot;/abc[123]d/&amp;quot;]; 正则匹配--&amp;gt;字符串组--&amp;gt;zfcz[&amp;quot;[a-z]、[^abc]&amp;quot;]; 正则匹配--&amp;gt;量词--&amp;gt;lc[&amp;quot;{m,}、{m}、?、*、+&amp;quot;]; 正则匹配--&amp;gt;贪婪匹配--&amp;gt;tl[&amp;quot;/\d{2,5}/ 尽可能多的匹配&amp;quot;]; 正则匹配--&amp;gt;惰性匹配--&amp;gt;dx[&amp;quot;/\d{2,5}?/ 尽可能少的匹配&amp;quot;]; 正则匹配--&amp;gt;多选分支--&amp;gt;duox[&amp;quot;/good|night/&amp;quot;];  精确匹配：简言之就是精确地匹配出模式字符串 模糊匹配：使用正则的规则，按照规则匹配出一系列的符合条件的字符串 横向模糊匹配：格式如 /abc{1,5}d/意为匹配c出现1~5次之间都可以 纵向模糊匹配：格式如/abc[def]/意为匹配中abc后边出现d、e、f任何之一就可以 字符组：形如[abc]意为匹配一个字符，为abc任意一个，用在纵向模糊匹配中     字符组 含义     \d [0-9]   \D [^0-9]   \s [\t\v\n\r\f]空白符   \S [^\t\v\n\r\f]   \w [0-9a-zA-Z]   \W [^0-9a-zA-Z]   . 通配符[^\n\r\u2028\u2029]几乎表示任何字符   [\d\D] [\S\s] [\W\w]  [^] 表示任意字符     量词：形如{1，5}意为匹配的前一个字符出现1~5任意次数均可匹配  </description>
+    </item>
     
     <item>
       <title>算法 罗马数字转整数</title>

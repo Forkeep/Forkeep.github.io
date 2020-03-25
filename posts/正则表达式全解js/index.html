@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <meta name="generator" content="Hugo 0.64.1" />
+
+  <title>正则表达式全解Js &middot; 你好，李哲</title>
+
+  <link rel="shortcut icon" href="https://forkeep.github.io/images/favicon.ico">
+  <link rel="stylesheet" href="https://forkeep.github.io/css/spectre.min.css">
+  <link rel="stylesheet" href="https://forkeep.github.io/css/style.css">
+  <link rel="stylesheet" href="https://forkeep.github.io/css/highlight.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  
+
+  
+
+  
+  <meta property="og:title" content="正则表达式全解Js" />
+<meta property="og:description" content="正则表达式（JavaScript）  第一章 正则匹配全解 本章知识结构图 graph LR; 正则匹配--&gt;精确匹配 --&gt;jq[&quot;/hello/&quot;]; 正则匹配--&gt;模糊匹配; 模糊匹配--&gt;横向模糊匹配 --&gt;mhh[&quot;/abc{1,3}d/&quot;]; 模糊匹配--&gt;纵向模糊匹配--&gt;mhz[&quot;/abc[123]d/&quot;]; 正则匹配--&gt;字符串组--&gt;zfcz[&quot;[a-z]、[^abc]&quot;]; 正则匹配--&gt;量词--&gt;lc[&quot;{m,}、{m}、?、*、&#43;&quot;]; 正则匹配--&gt;贪婪匹配--&gt;tl[&quot;/\d{2,5}/ 尽可能多的匹配&quot;]; 正则匹配--&gt;惰性匹配--&gt;dx[&quot;/\d{2,5}?/ 尽可能少的匹配&quot;]; 正则匹配--&gt;多选分支--&gt;duox[&quot;/good|night/&quot;];  精确匹配：简言之就是精确地匹配出模式字符串 模糊匹配：使用正则的规则，按照规则匹配出一系列的符合条件的字符串 横向模糊匹配：格式如 /abc{1,5}d/意为匹配c出现1~5次之间都可以 纵向模糊匹配：格式如/abc[def]/意为匹配中abc后边出现d、e、f任何之一就可以 字符组：形如[abc]意为匹配一个字符，为abc任意一个，用在纵向模糊匹配中     字符组 含义     \d [0-9]   \D [^0-9]   \s [\t\v\n\r\f]空白符   \S [^\t\v\n\r\f]   \w [0-9a-zA-Z]   \W [^0-9a-zA-Z]   . 通配符[^\n\r\u2028\u2029]几乎表示任何字符   [\d\D] [\S\s] [\W\w]  [^] 表示任意字符     量词：形如{1，5}意为匹配的前一个字符出现1~5任意次数均可匹配  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forkeep.github.io/posts/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A8%E8%A7%A3js/" />
+<meta property="article:published_time" content="2020-03-23T10:28:46+08:00" />
+<meta property="article:modified_time" content="2020-03-23T10:28:46+08:00" />
+
+  
+  <meta itemprop="name" content="正则表达式全解Js">
+<meta itemprop="description" content="正则表达式（JavaScript）  第一章 正则匹配全解 本章知识结构图 graph LR; 正则匹配--&gt;精确匹配 --&gt;jq[&quot;/hello/&quot;]; 正则匹配--&gt;模糊匹配; 模糊匹配--&gt;横向模糊匹配 --&gt;mhh[&quot;/abc{1,3}d/&quot;]; 模糊匹配--&gt;纵向模糊匹配--&gt;mhz[&quot;/abc[123]d/&quot;]; 正则匹配--&gt;字符串组--&gt;zfcz[&quot;[a-z]、[^abc]&quot;]; 正则匹配--&gt;量词--&gt;lc[&quot;{m,}、{m}、?、*、&#43;&quot;]; 正则匹配--&gt;贪婪匹配--&gt;tl[&quot;/\d{2,5}/ 尽可能多的匹配&quot;]; 正则匹配--&gt;惰性匹配--&gt;dx[&quot;/\d{2,5}?/ 尽可能少的匹配&quot;]; 正则匹配--&gt;多选分支--&gt;duox[&quot;/good|night/&quot;];  精确匹配：简言之就是精确地匹配出模式字符串 模糊匹配：使用正则的规则，按照规则匹配出一系列的符合条件的字符串 横向模糊匹配：格式如 /abc{1,5}d/意为匹配c出现1~5次之间都可以 纵向模糊匹配：格式如/abc[def]/意为匹配中abc后边出现d、e、f任何之一就可以 字符组：形如[abc]意为匹配一个字符，为abc任意一个，用在纵向模糊匹配中     字符组 含义     \d [0-9]   \D [^0-9]   \s [\t\v\n\r\f]空白符   \S [^\t\v\n\r\f]   \w [0-9a-zA-Z]   \W [^0-9a-zA-Z]   . 通配符[^\n\r\u2028\u2029]几乎表示任何字符   [\d\D] [\S\s] [\W\w]  [^] 表示任意字符     量词：形如{1，5}意为匹配的前一个字符出现1~5任意次数均可匹配  ">
+<meta itemprop="datePublished" content="2020-03-23T10:28:46&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-23T10:28:46&#43;08:00" />
+<meta itemprop="wordCount" content="47">
+
+
+
+<meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="正则表达式全解Js"/>
+<meta name="twitter:description" content="正则表达式（JavaScript）  第一章 正则匹配全解 本章知识结构图 graph LR; 正则匹配--&gt;精确匹配 --&gt;jq[&quot;/hello/&quot;]; 正则匹配--&gt;模糊匹配; 模糊匹配--&gt;横向模糊匹配 --&gt;mhh[&quot;/abc{1,3}d/&quot;]; 模糊匹配--&gt;纵向模糊匹配--&gt;mhz[&quot;/abc[123]d/&quot;]; 正则匹配--&gt;字符串组--&gt;zfcz[&quot;[a-z]、[^abc]&quot;]; 正则匹配--&gt;量词--&gt;lc[&quot;{m,}、{m}、?、*、&#43;&quot;]; 正则匹配--&gt;贪婪匹配--&gt;tl[&quot;/\d{2,5}/ 尽可能多的匹配&quot;]; 正则匹配--&gt;惰性匹配--&gt;dx[&quot;/\d{2,5}?/ 尽可能少的匹配&quot;]; 正则匹配--&gt;多选分支--&gt;duox[&quot;/good|night/&quot;];  精确匹配：简言之就是精确地匹配出模式字符串 模糊匹配：使用正则的规则，按照规则匹配出一系列的符合条件的字符串 横向模糊匹配：格式如 /abc{1,5}d/意为匹配c出现1~5次之间都可以 纵向模糊匹配：格式如/abc[def]/意为匹配中abc后边出现d、e、f任何之一就可以 字符组：形如[abc]意为匹配一个字符，为abc任意一个，用在纵向模糊匹配中     字符组 含义     \d [0-9]   \D [^0-9]   \s [\t\v\n\r\f]空白符   \S [^\t\v\n\r\f]   \w [0-9a-zA-Z]   \W [^0-9a-zA-Z]   . 通配符[^\n\r\u2028\u2029]几乎表示任何字符   [\d\D] [\S\s] [\W\w]  [^] 表示任意字符     量词：形如{1，5}意为匹配的前一个字符出现1~5任意次数均可匹配  "/>
+
+</head>
+
+<body onload="setPixelFont()">
+  <div class="container p-fixed" style="z-index:3">
+  <nav class="navbar m-2 p-2 s-rounded shadow bg-primary">
+    <section class="navbar-section">
+      <button class="btn btn-action btn-primary s-circle text-gray" id="pixelfont-toggle"><i class="fas fa-robot fa-lg"></i></button>
+    </section>
+    <section class="navbar-section">
+      
+        <a class="btn btn-primary" href='https://forkeep.github.io/'>Home</a>
+      
+
+      
+
+      
+    </section>
+  </nav>
+</div>
+
+  <section class="container grid-md">
+  <div class="columns">
+    
+    
+<article class="container p-centered mt-space">
+  <header>
+    <h2 class="text-center">正则表达式全解Js</h2>
+    <h6 class="text-gray text-italic"></h6>
+  </header>
+  <section class="my-gap">
+    <h1 id="正则表达式javascript">正则表达式（JavaScript）</h1>
+<hr>
+<h2 id="第一章-正则匹配全解">第一章 正则匹配全解</h2>
+<h3 id="本章知识结构图">本章知识结构图</h3>
+<pre><code class="language-mermaid" data-lang="mermaid">graph LR;
+  正则匹配--&gt;精确匹配 --&gt;jq[&quot;/hello/&quot;];
+  正则匹配--&gt;模糊匹配;
+  模糊匹配--&gt;横向模糊匹配 --&gt;mhh[&quot;/abc{1,3}d/&quot;];
+  模糊匹配--&gt;纵向模糊匹配--&gt;mhz[&quot;/abc[123]d/&quot;];
+  正则匹配--&gt;字符串组--&gt;zfcz[&quot;[a-z]、[^abc]&quot;];
+  正则匹配--&gt;量词--&gt;lc[&quot;{m,}、{m}、?、*、+&quot;];
+  正则匹配--&gt;贪婪匹配--&gt;tl[&quot;/\d{2,5}/ 尽可能多的匹配&quot;];
+  正则匹配--&gt;惰性匹配--&gt;dx[&quot;/\d{2,5}?/ 尽可能少的匹配&quot;];
+  正则匹配--&gt;多选分支--&gt;duox[&quot;/good|night/&quot;];
+
+</code></pre><ul>
+<li>精确匹配：简言之就是精确地匹配出模式字符串</li>
+<li>模糊匹配：使用正则的规则，按照规则匹配出一系列的符合条件的字符串</li>
+<li>横向模糊匹配：格式如 <code>/abc{1,5}d/</code>意为匹配<code>c</code>出现1~5次之间都可以</li>
+<li>纵向模糊匹配：格式如<code>/abc[def]/</code>意为匹配中<code>abc</code>后边出现<code>d、e、f</code>任何之一就可以</li>
+<li>字符组：形如<code>[abc]</code>意为匹配一个字符，为<code>abc</code>任意一个，用在纵向模糊匹配中</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字符组</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\d</td>
+<td><code>[0-9]</code></td>
+</tr>
+<tr>
+<td>\D</td>
+<td><code>[^0-9]</code></td>
+</tr>
+<tr>
+<td>\s</td>
+<td><code>[\t\v\n\r\f]</code>空白符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td><code>[^\t\v\n\r\f]</code></td>
+</tr>
+<tr>
+<td>\w</td>
+<td><code>[0-9a-zA-Z]</code></td>
+</tr>
+<tr>
+<td>\W</td>
+<td><code>[^0-9a-zA-Z]</code></td>
+</tr>
+<tr>
+<td>.</td>
+<td>通配符<code>[^\n\r\u2028\u2029]</code><strong>几乎</strong>表示任何字符</td>
+</tr>
+<tr>
+<td><code>[\d\D]</code> <code>[\S\s]</code> <code>[\W\w] </code>  <code>[^]</code></td>
+<td>表示任意字符</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>量词：形如<code>{1，5}</code>意为匹配的前一个字符出现1~5任意次数均可匹配</li>
+</ul>
+
+
+    
+  </section>
+  <div class="divider my-gap"></div>
+  <footer class="col-12 d-inline-block">
+    <span class="float-left">
+      <button class="btn btn-action btn-accent shadow s-circle" onclick="window.history.back();"><i class="fas fa-arrow-left"></i></button>
+    </span>
+    <span class="float-right">
+      <div class="text-right float-left mx-2">
+        <span class="text-dark"></span><br>
+        <span class="text-gray"></span>
+      </div>
+      <figure class="avatar avatar-lg">
+        <img id="profile">
+      </figure>
+    </span>
+  </footer>
+</article>
+
+    <footer class="container p-centered text-center my-gap">
+  
+
+  <small class="text-gray">
+  
+    © Copyright 2020 
+  
+  </small>
+</footer>
+
+  </div>
+  </section>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://forkeep.github.io/js/main.js"></script>
+<script src="https://forkeep.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>

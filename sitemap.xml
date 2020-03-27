@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://forkeep.github.io/posts/</loc>
-    <lastmod>2020-03-25T23:16:37+08:00</lastmod>
+    <loc>https://forkeep.github.io/posts/js%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2020-03-27T22:32:45+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://forkeep.github.io/posts/vue%E4%B8%AD%E7%9A%84.sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/</loc>
-    <lastmod>2020-03-25T23:16:37+08:00</lastmod>
+    <loc>https://forkeep.github.io/posts/</loc>
+    <lastmod>2020-03-27T22:32:45+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://forkeep.github.io/</loc>
+    <lastmod>2020-03-27T22:32:45+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://forkeep.github.io/posts/vue%E4%B8%AD%E7%9A%84.sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/</loc>
     <lastmod>2020-03-25T23:16:37+08:00</lastmod>
   </url>
   

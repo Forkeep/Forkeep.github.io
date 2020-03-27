@@ -6,10 +6,19 @@
     <description>Recent content on 你好，李哲</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 25 Mar 2020 23:16:37 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 22:32:45 +0800</lastBuildDate>
     
 	<atom:link href="https://forkeep.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS学习知识要点-面向对象编程</title>
+      <link>https://forkeep.github.io/posts/js%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Fri, 27 Mar 2020 22:32:45 +0800</pubDate>
+      
+      <guid>https://forkeep.github.io/posts/js%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</guid>
+      <description>实例对象与new关键字  js的面向对象通过constructor和原型prototype实现的 构造函数  内部使用this关键字，代表创建实例 生成对象时必须使用new关键字   new原理步骤  创建一个空对象，作为返回的对象 将空对象原型指向构造函数的prototype属性 将这个空对象赋值给函数内部的this 执行构造函数内部代码   构造函数内部return只能返回对象，如果写的是return 5,则不论是什么基本类型，都会返回this指向的对象 构造函数return一个对象，则返回这个对象，不返回this指向的对象（强调上一条） new.target这个属性只有用new关键字时才会有值，可以以此来判断是否使用了new 防止忘记写new去发生错误，可以使用new.target简化省去new  function Person(name,age){ if(!new.target){ return new Person(name,age) } this._name = name this._age = age } p1 = Person(&amp;#39;forkeep&amp;#39;,22) p2 = new Person(&amp;#39;hz&amp;#39;,20) console.log(p1._name)//forkeep console.log(p2._name)//hz  Object.create创建实例对象  var person1 = { name:&amp;#39;lz&amp;#39;, age:22, hello:function(){ console.log(&amp;#39;Hi! &amp;#39;+this.name) } } var person2 = Object.create(person1) console.log(person2.age)//22 person2.hello()//Hi! lz  this关键字   它总返回一个对象</description>
+    </item>
     
     <item>
       <title>Vue中的.sync修饰符</title>
